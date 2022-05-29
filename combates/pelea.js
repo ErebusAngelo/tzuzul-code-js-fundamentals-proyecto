@@ -44,4 +44,4 @@ export function pelea(statsPropias,statsEnemigo){
                
         }
        
-        
+      
