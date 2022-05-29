@@ -11,7 +11,7 @@ function TirarDados() {
 
     
 
-//se decide el ataque verdadero sumando el ataque + tirada de dados - defensa del oponente y se da el combate hasta que la vida de uno llegue a cero
+//se decide el ataque verdadero sumando el ataque + tirada de dados - defensa del oponente y se da el combate hasta que la vida de uno llegue a cero.
 export function pelea(statsPropias,statsEnemigo){
        do{
       
