@@ -1,5 +1,6 @@
-const enemystatsOne= {vida: 150, ataque: 14, defensa:10}
-const misStats = {vida: 150, ataque: 14, defensa: 10}
+
+let trueDamage
+let enemyTrueDamage
 
 //Dado de 6 caras.
 function TirarDados() {
@@ -8,35 +9,12 @@ function TirarDados() {
    }
 
 
-    if(trueDamage>enemyTrueDamage){
-        numeroDeEnemigo.vida-=trueDamage
-    }
-    else if(enemyTrueDamage>trueDamage){
-        statsPropias.vida-=enemyTrueDamage
-    }
-    console.log(`Vida  ${statsPropias.vida}`)
-    console.log(`Vida del enemigo  ${numeroDeEnemigo.vida}`)
-
-
     
- 
-//Elige como continuar dependiendo si perdiste o ganaste la pelea
- function finPelea(){
-    if(statsPropias.vida<=0){
-        alert("Haz muerto")
-        alert("GAME OVER");
-        Deno.exit(1)
-        }
-        else{
-            alert("Haz derrotado a tu enemigo")
-           
-        }
- }
 
-
-function pelea(statsPropias,statsEnemigo){
+//se decide el ataque verdadero sumando el ataque + tirada de dados - defensa del oponente y se da el combate hasta que la vida de uno llegue a cero
+export function pelea(statsPropias,statsEnemigo){
        do{
-   
+      
          trueDamage = TirarDados()+statsPropias.ataque-statsEnemigo.defensa
            
            enemyTrueDamage = TirarDados()+statsEnemigo.ataque-statsPropias.defensa
@@ -49,10 +27,21 @@ function pelea(statsPropias,statsEnemigo){
            }
            console.log(`Vida  ${statsPropias.vida}`)
            console.log(`Vida del enemigo  ${statsEnemigo.vida}`)
-         
+        
            }
+        
            while(statsPropias.vida >0 && statsEnemigo.vida > 0)
-           finPelea()
+           //se decide que pasa cuado la vida de alguno llega a cero
+           if(statsPropias.vida<=0){
+               alert("Haz muerto")
+               alert("GAME OVER");
+               Deno.exit(1)
+               }
+               else{
+                   alert("Haz derrotado a tu enemigo")
+                  
+               }
+               
         }
-pelea(misStats,enemystatsOne)
-
+       
+        

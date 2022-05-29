@@ -1,10 +1,10 @@
+import {pelea} from "./pelea/pelea.js";
+
 let color = ""
 let clase = ""
 let respuesta; 
 let respuestados;
 let condition = true
-let trueDamage
-let enemyTrueDamage
 let dejarElemento
 let elemento
 let full;
@@ -14,61 +14,21 @@ const enemyStatsOne= {vida: 150, ataque: 14, defensa:10}
 const enemyStatsTwo= {vida: 200, ataque: 16, defensa: 12}
 const bossStats = {vida: 250, ataque: 18, defensa: 14}
 
+
 function colorInventario(){
     for (let i = 0; i < inventario.length; i++) {
     
-        color+=" " + inventario[i];
+        color=" " + inventario;
          
       }
       
       console.log(`%cinventario:${color}`,`color: orange;`)
 }
 
-function TirarDados() {
-    
-    return Math.round(Math.random()*6)
-   }
 
 
-function turnos (miDaño,dañoEnemigo,numeroDeEnemigo){
-    if(miDaño>dañoEnemigo){
-        numeroDeEnemigo.vida-=miDaño
-    }
-    else if(dañoEnemigo>miDaño){
-        stats.vida-=dañoEnemigo
-    }
-    console.log(`Vida  ${stats.vida}`)
-    console.log(`Vida del enemigo  ${numeroDeEnemigo.vida}`)
-}
-
-    
- 
-
- function finPelea(){
-    if(stats.vida<=0){
-        alert("Haz muerto")
-        alert("GAME OVER");
-        Deno.exit(1)
-        }
-        else{
-            alert("Haz derrotado a tu enemigo")
-           
-        }
- }
 
 
-function pelea(enemyStats){
-       do{
-   
-         trueDamage = TirarDados()+stats.ataque-enemyStats.defensa
-           
-           enemyTrueDamage = TirarDados()+enemyStats.ataque-stats.defensa
-          
-          turnos(trueDamage,enemyTrueDamage,enemyStats)
-           }
-           while(stats.vida >0 && enemyStats.vida > 0)
-        finPelea()
-        }
        
 function invLleno(){
     
@@ -124,7 +84,7 @@ function fullInv(){
     invLleno()
    descontarElemento()
     }
-    console.log(`inventario${inventario}`)
+    colorInventario()
     console.log(stats)
 }
 
@@ -295,13 +255,13 @@ stats.defensa+=3
 inventario.push("casco+3 Def")
 colorInventario()
 console.log(stats)
-
+ 
 condition =false
 
 break;
  case "3":
     alert("Entras en una habitacion oscura y alguien te ataca por sorpresa, te vez obligado a pelear")
-    pelea(enemyStatsOne)
+    pelea(stats,enemyStatsOne)
     alert("Al derrotar a tu enemigo logras adquirir su espada")
     inventario.push ("espada+4 atk")
     stats.ataque+=4
@@ -327,7 +287,7 @@ respuesta = prompt("Toma una decision[1.Puerta izquierda 2.Puerta central 3.Puer
 switch (respuesta) {
 case "1":
 alert("al ingresar ves un orco con cara de pocos amigos, intentas comunicarte con el pero se abalanza sobre ti y te ataca")
-pelea(enemyStatsTwo)
+pelea(stats,enemyStatsTwo)
 alert("al derrotar a tu oponente te quedas con su espada")
 inventario.push ("espada+6 Atk")
 stats.ataque += 6
@@ -368,22 +328,22 @@ function final(){
     alert("Al ingresar ves un trono y un viejo esqueleto con armadura que desacansa en el, con una maza en su mano izquierda")
     alert("Te dispones a investigar la sala pero escuchas un sonido, el esqueleto se levanta del trono y se ve dispuesto a atacarte")
     
-    pelea(bossStats)
+    pelea(stats,bossStats)
     console.log(stats)
+    
+         alert("blandes tu espada hacia el cuello del esqueleto, separando su cabeza de su cuerpo, cierras los ojos para intentar respirar un poco de tranquilidad")
+       alert("Comienzas a oir un sonido extraño y repetitivo, abres los ojos y te despiertas en tu cama, te das media vuelta y apagas el despertador para dormir un poco mas")
+       alert("FELICIDADES!")
+       alert("HAZ TERMINADO EL JUEGO")
+       console.log("creado por Gabriel Alejandro D'Angelo")
+       console.log("%c.___________. __    __   _______     _______ .__   __.  _______  ","color:red")
+       console.log("%c|           ||  |  |  | |   ____|   |   ____||  | /  | |       | ","color:red")
+       console.log("%c`---|  |----`|  |__|  | |  |__      |  |__   |  |/   | |  .--.  |","color:red")
+       console.log("%c    |  |     |   __   | |   __|     |   __|  |    .  | |  |  |  |","color:red")
+       console.log("%c    |  |     |  |  |  | |  |____    |  |____ |   /|  | |  '--'  |","color:red")
+       console.log("%c    |__|     |__|  |__| |_______|   |_______||__/ |__| |_______/ ","color:red")
 }
- function epilogo(){
-      alert("blandes tu espada hacia el cuello del esqueleto, separando su cabeza de su cuerpo, cierras los ojos para intentar respirar un poco de tranquilidad")
-    alert("Comienzas a oir un sonido extraño y repetitivo, abres los ojos y te despiertas en tu cama, te das media vuelta y apagas el despertador para dormir un poco mas")
-    alert("FELICIDADES!")
-    alert("HAZ TERMINADO EL JUEGO")
-    console.log("creado por Gabriel Alejandro D'Angelo")
-    console.log("%c.___________. __    __   _______     _______ .__   __.  _______  ","color:red")
-    console.log("%c|           ||  |  |  | |   ____|   |   ____||  | /  | |       | ","color:red")
-    console.log("%c`---|  |----`|  |__|  | |  |__      |  |__   |  |/   | |  .--.  |","color:red")
-    console.log("%c    |  |     |   __   | |   __|     |   __|  |    .  | |  |  |  |","color:red")
-    console.log("%c    |  |     |  |  |  | |  |____    |  |____ |   /|  | |  '--'  |","color:red")
-    console.log("%c    |__|     |__|  |__| |_______|   |_______||__/ |__| |_______/ ","color:red")
- }
+ 
 function juego(){
 login ()
 character()
@@ -396,3 +356,4 @@ final()
 
  juego()
 
+ 
