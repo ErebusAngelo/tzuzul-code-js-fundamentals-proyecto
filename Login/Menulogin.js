@@ -1,6 +1,6 @@
 let respuesta; 
 let condition = true
-
+//presentacion
  function Incio(){
     console.log("%c        EL CASTILLO INCONSCIENTE         ","color: #6c1d62; font-style: italic; font-weight: bold;")
     console.log("%c        ['_]               [_']            ", "color: #ff0000;")
@@ -27,21 +27,21 @@ let condition = true
       
  alert("Presiona [Enter] para comenzar a jugar")
 }
-
+//Menu de registro
  function login() {
-    let userName = prompt("No reconozco tu rostro, no eres de por aqui cierto? Dime, Cual es tu nombre?")
+    let UserName = prompt("No reconozco tu rostro, no eres de por aqui cierto? Dime, Cual es tu nombre?")
  do {
    
  
-     respuesta = prompt(`${userName}? ese es realmente tu nombre?[responde "si" o "no"]`).toLowerCase()
+     respuesta = prompt(`${UserName}? ese es realmente tu nombre?[responde "si" o "no"]`).toLowerCase()
       tag:              
      switch (respuesta) {
          case "si":
-             alert(`${userName}, que nombre peculiar, se nota que eres un forastero`)
+             alert(`${UserName}, que nombre peculiar, se nota que eres un forastero`)
              condition =false
              break;
          case "no":
-             userName = alert("No tengo tiempo para juegos")
+             UserName = alert("No tengo tiempo para juegos")
              break;
          default:
              respuesta = prompt("No te estoy entendiendo forastero")

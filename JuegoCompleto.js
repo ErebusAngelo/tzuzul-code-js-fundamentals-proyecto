@@ -166,7 +166,7 @@ function final(){
     
     pelea(stats,bossStats)
     console.log(stats)
-    
+    //epilogo
          alert("blandes tu espada hacia el cuello del esqueleto, separando su cabeza de su cuerpo, cierras los ojos para intentar respirar un poco de tranquilidad")
        alert("Comienzas a oir un sonido extraño y repetitivo, abres los ojos y te despiertas en tu cama, te das media vuelta y apagas el despertador para dormir un poco mas")
        alert("FELICIDADES!")

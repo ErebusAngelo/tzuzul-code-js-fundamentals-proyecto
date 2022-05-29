@@ -4,7 +4,7 @@ let condition = true
 
 
   
-
+//Otorga estatdisticas de personaje segun el personaje elegido
 export function character(MisStats){
     do {
         

@@ -22,11 +22,6 @@ function pushitem (item){
 }
 
 
-
-
-
-
-
 // al tener mas de dos objetos en el inventario obliga a dejar uno
 function invLleno(){
     
@@ -55,6 +50,7 @@ function invLleno(){
     }
     colorInventario()
 }
+
 // se encarga de descontar las estadisticas del elemento descartado
 function descontarElemento (miStat){
     switch (elemento) {
