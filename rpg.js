@@ -7,13 +7,12 @@ let trueDamage
 let enemyTrueDamage
 let dejarElemento
 let elemento
+let full;
+const inventario = []
 const stats = {vida: 0, ataque: 0, defensa: 0}
 const enemyStatsOne= {vida: 150, ataque: 14, defensa:10}
 const enemyStatsTwo= {vida: 200, ataque: 16, defensa: 12}
 const bossStats = {vida: 250, ataque: 18, defensa: 14}
-
-const inventario = []
-let full;
 
 function colorInventario(){
     for (let i = 0; i < inventario.length; i++) {
@@ -59,17 +58,13 @@ function turnos (miDaño,dañoEnemigo,numeroDeEnemigo){
 
 
 function pelea(enemyStats){
-    
        do{
-    setTimeout(()=>{
-        
-        trueDamage = TirarDados()+stats.ataque-enemyStats.defensa
+   
+         trueDamage = TirarDados()+stats.ataque-enemyStats.defensa
+           
+           enemyTrueDamage = TirarDados()+enemyStats.ataque-stats.defensa
           
-          enemyTrueDamage = TirarDados()+enemyStats.ataque-stats.defensa
-         
-         turnos(trueDamage,enemyTrueDamage,enemyStats)
-        
-    },500)
+          turnos(trueDamage,enemyTrueDamage,enemyStats)
            }
            while(stats.vida >0 && enemyStats.vida > 0)
         finPelea()
@@ -160,7 +155,7 @@ function login(){
       
  alert("Presiona [Enter] para comenzar a jugar")
     
-do {
+ do {
    let userName = prompt("No reconozco tu rostro, no eres de por aqui cierto? Dime, Cual es tu nombre?")
 
     respuesta = prompt(`${userName}? ese es realmente tu nombre?[responde "si" o "no"]`).toLowerCase()
@@ -369,26 +364,26 @@ fullInv()
 } while (condition);
 }
 function final(){
-alert("Te das cuenta que frente a ti hay una unica gran puerta adornada con detalles dorados,las demas puertas desaparecieron, tu unica opcion es pasar por alli")
-alert("Al ingresar ves un trono y un viejo esqueleto con armadura que desacansa en el, con una maza en su mano izquierda")
-alert("Te dispones a investigar la sala pero escuchas un sonido, el esqueleto se levanta del trono y se ve dispuesto a atacarte")
-
-pelea(bossStats)
-console.log(stats)
-
-alert("blandes tu espada hacia el cuello del esqueleto, separando su cabeza de su cuerpo, cierras los ojos para intentar respirar un poco de tranquilidad")
-alert("Comienzas a oir un sonido extraño y repetitivo, abres los ojos y te despiertas en tu cama, te das media vuelta y apagas el despertador para dormir un poco mas")
-alert("FELICIDADES!")
-alert("HAZ TERMINADO EL JUEGO")
-console.log("creado por Gabriel Alejandro D'Angelo")
-console.log("%c.___________. __    __   _______     _______ .__   __.  _______  ","color:red")
-console.log("%c|           ||  |  |  | |   ____|   |   ____||  | /  | |       | ","color:red")
-console.log("%c`---|  |----`|  |__|  | |  |__      |  |__   |  |/   | |  .--.  |","color:red")
-console.log("%c    |  |     |   __   | |   __|     |   __|  |    .  | |  |  |  |","color:red")
-console.log("%c    |  |     |  |  |  | |  |____    |  |____ |   /|  | |  '--'  |","color:red")
-console.log("%c    |__|     |__|  |__| |_______|   |_______||__/ |__| |_______/ ","color:red")
+    alert("Te das cuenta que frente a ti hay una unica gran puerta adornada con detalles dorados,las demas puertas desaparecieron, tu unica opcion es pasar por alli")
+    alert("Al ingresar ves un trono y un viejo esqueleto con armadura que desacansa en el, con una maza en su mano izquierda")
+    alert("Te dispones a investigar la sala pero escuchas un sonido, el esqueleto se levanta del trono y se ve dispuesto a atacarte")
+    
+    pelea(bossStats)
+    console.log(stats)
 }
-
+ function epilogo(){
+      alert("blandes tu espada hacia el cuello del esqueleto, separando su cabeza de su cuerpo, cierras los ojos para intentar respirar un poco de tranquilidad")
+    alert("Comienzas a oir un sonido extraño y repetitivo, abres los ojos y te despiertas en tu cama, te das media vuelta y apagas el despertador para dormir un poco mas")
+    alert("FELICIDADES!")
+    alert("HAZ TERMINADO EL JUEGO")
+    console.log("creado por Gabriel Alejandro D'Angelo")
+    console.log("%c.___________. __    __   _______     _______ .__   __.  _______  ","color:red")
+    console.log("%c|           ||  |  |  | |   ____|   |   ____||  | /  | |       | ","color:red")
+    console.log("%c`---|  |----`|  |__|  | |  |__      |  |__   |  |/   | |  .--.  |","color:red")
+    console.log("%c    |  |     |   __   | |   __|     |   __|  |    .  | |  |  |  |","color:red")
+    console.log("%c    |  |     |  |  |  | |  |____    |  |____ |   /|  | |  '--'  |","color:red")
+    console.log("%c    |__|     |__|  |__| |_______|   |_______||__/ |__| |_______/ ","color:red")
+ }
 function juego(){
 login ()
 character()
