@@ -1,15 +1,17 @@
 import {pelea} from "./combates/pelea.js";
-import {invLleno,colorInventario,pushitem  } from "./inventario/inventario.js";
+import {invLleno,colorInventario,pushitem,descontarElemento} from "./inventario/inventario.js";
 import {Incio,login} from "./Login/Menulogin.js";
 import {character} from "./Personaje/seleccionPersonaje.js";
-import {stats} from "./Personaje/seleccionPersonaje.js";
 
 let respuesta; 
 let condition = true
-stats 
+
+const stats = {vida: 0, ataque: 0, defensa: 0}
 const enemyStatsOne= {vida: 150, ataque: 14, defensa:10}
 const enemyStatsTwo= {vida: 200, ataque: 16, defensa: 12}
 const bossStats = {vida: 250, ataque: 18, defensa: 14}
+
+
 
 function primerLugar(){
  alert (`Fue un gusto charlar contigo, pero es momento de dejarte solo con tu destino`)
@@ -25,7 +27,7 @@ function primerLugar(){
         case "2":
             alert("Entras a una sala con una letrina en la que ecuentras una espada")
             stats.ataque += 3
-            pushitem("espada+3 atk")
+            pushitem("espada+3 Atk")
             colorInventario()
             console.log(stats)
             condition =false
@@ -150,6 +152,7 @@ condition = true
 break;
 }
 invLleno()
+descontarElemento(stats)
 console.log(stats)
 
 } while (condition);
@@ -180,7 +183,7 @@ function final(){
 function juego(){
 Incio()
 login ()
-character()
+character(stats)
 primerLugar()
 segundoLugar()
 tercerlugar()

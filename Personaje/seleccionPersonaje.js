@@ -1,9 +1,11 @@
 let clase = ""
 let respuestados;
 let condition = true
- export const stats = {vida: 0, ataque: 0, defensa: 0}
 
-export function character(){
+
+  
+
+export function character(MisStats){
     do {
         
     console.log("%c Humano[300 vida, 14 ataque, 12 defensa]","color: blue;")
@@ -15,26 +17,26 @@ export function character(){
         switch (respuestados) {
             case "1":
                 clase = "Humano"
-                stats.vida= 300
-                stats.ataque= 14
-                stats.defensa= 12
+                MisStats.vida= 300
+                MisStats.ataque= 14
+                MisStats.defensa= 12
                 alert(`Un ${clase}! jamas habia visto uno por aqui`)
                 condition =false
                 break;
             case "2":
                 clase = "Elfo"
-                stats.vida = 250
-                stats.ataque = 16
-                stats.defensa = 8
+                MisStats.vida = 250
+                MisStats.ataque = 16
+                MisStats.defensa = 8
                 alert(`Un ${clase}! jamas habia visto uno por aqui`)
                 
                 condition =false
                 break;
             case "3":
                 clase = "Enano"
-                stats.vida= 350
-                stats.ataque = 10
-                stats.defensa = 14
+                MisStats.vida= 350
+                MisStats.ataque = 10
+                MisStats.defensa = 14
                 alert(`Un ${clase}! jamas habia visto uno por aqui`)
                 condition =false
                 break;
@@ -45,5 +47,8 @@ export function character(){
         }
     } while (condition);
     console.log(clase)
-    console.log(stats)
+    console.log(MisStats)
     }
+
+   
+    
