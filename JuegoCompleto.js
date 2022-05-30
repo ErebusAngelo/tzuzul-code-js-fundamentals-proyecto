@@ -9,7 +9,7 @@ let condition = true
 const stats = {vida: 0, ataque: 0, defensa: 0}
 const enemyStatsOne= {vida: 150, ataque: 14, defensa:10}
 const enemyStatsTwo= {vida: 200, ataque: 16, defensa: 12}
-const bossStats = {vida: 250, ataque: 18, defensa: 14}
+const bossStats = {vida: 230, ataque: 18, defensa: 14}
 
 
 
@@ -81,7 +81,7 @@ condition =false
 
 break;
 case "2":
-alert("ves el cuerpo de un caballero muerto, su casco esta en buen estado, podria serte util")
+alert("Ves el cuerpo de un caballero muerto, su casco esta en buen estado, podria serte util")
 stats.defensa+=3
 pushitem("casco+3 Def")
 colorInventario()
@@ -117,9 +117,9 @@ respuesta = prompt("Toma una decision[1.Puerta izquierda 2.Puerta central 3.Puer
 
 switch (respuesta) {
 case "1":
-alert("al ingresar ves un orco con cara de pocos amigos, intentas comunicarte con el pero se abalanza sobre ti y te ataca")
+alert("Al ingresar ves un orco con cara de pocos amigos, intentas comunicarte con el pero se abalanza sobre ti y te ataca")
 pelea(stats,enemyStatsTwo)
-alert("al derrotar a tu oponente te quedas con su espada")
+alert("Al derrotar a tu oponente te quedas con su espada")
 pushitem("espada+6 Atk")
 stats.ataque += 6
 colorInventario()
@@ -128,7 +128,7 @@ console.log(stats)
 condition =false
 break;
 case "2":
-alert("Al tocar el pomo de la puerta, comienzas a sentir que te arde la mano, esta esta imbuida con magia, tu mano queda lastimada, pierdes vida y tambien queda lastimada por lo que pierdes ataque")
+alert("Al tocar el pomo de la puerta, comienzas a sentir que te arde la mano,esta imbuida con una fuerte magia, tu mano queda lastimada, pierdes vida y ataque, no es posible pasar por alli")
 stats.vida-=30
 stats.ataque-=2
 
@@ -167,11 +167,11 @@ function final(){
     pelea(stats,bossStats)
     console.log(stats)
     //epilogo
-         alert("blandes tu espada hacia el cuello del esqueleto, separando su cabeza de su cuerpo, cierras los ojos para intentar respirar un poco de tranquilidad")
+         alert("Blandes tu espada hacia el cuello del esqueleto, separando su cabeza de su cuerpo, cierras los ojos para intentar respirar un poco de tranquilidad")
        alert("Comienzas a oir un sonido extraño y repetitivo, abres los ojos y te despiertas en tu cama, te das media vuelta y apagas el despertador para dormir un poco mas")
        alert("FELICIDADES!")
        alert("HAZ TERMINADO EL JUEGO")
-       console.log("creado por Gabriel Alejandro D'Angelo")
+       console.log("Creado por Gabriel Alejandro D'Angelo")
        console.log("%c.___________. __    __   _______     _______ .__   __.  _______  ","color:red")
        console.log("%c|           ||  |  |  | |   ____|   |   ____||  | /  | |       | ","color:red")
        console.log("%c`---|  |----`|  |__|  | |  |__      |  |__   |  |/   | |  .--.  |","color:red")
