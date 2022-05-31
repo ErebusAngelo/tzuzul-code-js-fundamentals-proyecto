@@ -1,6 +1,7 @@
 
 let trueDamage
 let enemyTrueDamage
+let turno = 0
 
 //Dado de 6 caras.
 function TirarDados() {
@@ -25,6 +26,9 @@ export function pelea(statsPropias,statsEnemigo){
            else if(enemyTrueDamage>trueDamage){
                statsPropias.vida-=enemyTrueDamage
            }
+           turno++
+           alert("Turno "+(turno))
+            
            console.log(`Vida  ${statsPropias.vida}`)
            console.log(`Vida del enemigo  ${statsEnemigo.vida}`)
         
@@ -39,7 +43,7 @@ export function pelea(statsPropias,statsEnemigo){
                }
                else{
                    alert("Haz derrotado a tu enemigo")
-                  
+                  turno = 0
                }
                
         }

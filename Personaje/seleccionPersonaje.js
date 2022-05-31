@@ -17,16 +17,16 @@ export function character(MisStats){
         switch (respuestados) {
             case "1":
                 clase = "Humano"
-                MisStats.vida= 300
-                MisStats.ataque= 14
+                MisStats.vida= 135
+                MisStats.ataque= 15
                 MisStats.defensa= 12
                 alert(`Un ${clase}! jamas habia visto uno por aqui`)
                 condition =false
                 break;
             case "2":
                 clase = "Elfo"
-                MisStats.vida = 250
-                MisStats.ataque = 16
+                MisStats.vida = 120
+                MisStats.ataque = 17
                 MisStats.defensa = 8
                 alert(`Un ${clase}! jamas habia visto uno por aqui`)
                 
@@ -34,8 +34,8 @@ export function character(MisStats){
                 break;
             case "3":
                 clase = "Enano"
-                MisStats.vida= 350
-                MisStats.ataque = 10
+                MisStats.vida= 150
+                MisStats.ataque = 13
                 MisStats.defensa = 14
                 alert(`Un ${clase}! jamas habia visto uno por aqui`)
                 condition =false
