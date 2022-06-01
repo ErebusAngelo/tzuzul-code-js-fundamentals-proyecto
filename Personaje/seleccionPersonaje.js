@@ -8,9 +8,9 @@ let condition = true
 export function character(MisStats){
     do {
         
-    console.log("%c Humano[300 vida, 14 ataque, 12 defensa]","color: blue;")
-    console.log("%c Elfo  [250 vida, 16 ataque,  8 defensa]","color: red")
-    console.log("%c Enano [350 vida, 10 ataque, 14 defensa]","color:grey")
+    console.log("%c Humano[135 vida, 15 ataque, 12 defensa]","color: blue;")
+    console.log("%c Elfo  [120 vida, 17 ataque,  8 defensa]","color: red")
+    console.log("%c Enano [150 vida, 13 ataque, 14 defensa]","color:grey")
      respuestados = prompt("tu aspecto tambien es muy peculiar, no reconozco tu raza, que se supone que eres?Elige [1.Humano 2.Elfo 3.Enano]")
                         .toLowerCase()
                         .trim()

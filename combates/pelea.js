@@ -28,7 +28,9 @@ export function pelea(statsPropias,statsEnemigo){
            }
            turno++
            alert("Turno "+(turno))
-            
+           if (statsEnemigo.vida<0) {
+            statsEnemigo.vida=0
+            }
            console.log(`Vida  ${statsPropias.vida}`)
            console.log(`Vida del enemigo  ${statsEnemigo.vida}`)
         

@@ -7,9 +7,9 @@ let respuesta;
 let condition = true
 
 const stats = {vida: 0, ataque: 0, defensa: 0}
-const enemyStatsOne= {vida: 50, ataque: 14, defensa:10}
-const enemyStatsTwo= {vida: 60, ataque: 16, defensa: 12}
-const bossStats = {vida: 80, ataque: 18, defensa: 14}
+const enemyStatsOne= {vida: 150, ataque: 14, defensa:10}
+const enemyStatsTwo= {vida: 200, ataque: 16, defensa: 12}
+const bossStats = {vida: 230, ataque: 18, defensa: 14}
 
 
 
