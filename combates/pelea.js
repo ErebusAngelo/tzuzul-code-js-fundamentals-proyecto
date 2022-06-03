@@ -1,4 +1,3 @@
-
 let trueDamage
 let enemyTrueDamage
 let turno = 0
@@ -32,8 +31,7 @@ export function pelea(statsPropias,statsEnemigo){
              else if(enemyTrueDamage>trueDamage ){
                  statsPropias.vida-=enemyTrueDamage
              }
-             else{
-                 alert ("Ataque esquivado")
+            
              }
              turno++
              alert("Turno "+(turno))
@@ -57,4 +55,6 @@ export function pelea(statsPropias,statsEnemigo){
             }
     
 
-   
+
+
+      
