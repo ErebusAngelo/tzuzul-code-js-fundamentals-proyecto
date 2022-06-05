@@ -37,22 +37,22 @@ export function pelea(statsPropias,statsEnemigo){
              alert("Turno "+(turno))
              if (statsEnemigo.vida<0) {
               statsEnemigo.vida=0
-              }
+            }
+            if(statsPropias.vida<=0){
+                alert("Haz muerto")
+                alert("GAME OVER");
+                Deno.exit(1)
+                }
+                else{
+                    alert("Haz derrotado a tu enemigo")
+                   turno = 0
+                 }
              console.log(`Vida  ${statsPropias.vida}`)
              console.log(`Vida del enemigo  ${statsEnemigo.vida}`)
-           }
-           //se decide que pasa cuado la vida de alguno llega a cero
-           if(statsPropias.vida<=0){
-               alert("Haz muerto")
-               alert("GAME OVER");
-               Deno.exit(1)
-               }
-               else{
-                   alert("Haz derrotado a tu enemigo")
-                  turno = 0
-                }
-               
             }
+            //se decide que pasa cuado la vida de alguno llega a cero
+            
+           
     
 
 
